@@ -28,11 +28,6 @@ const Navbar = () => {
               Stats
             </Link>
           </li>
-          <li>
-            <Link to="/" className="nav-item">
-              Players
-            </Link>
-          </li>
         </div>
       </div>
     </div>
