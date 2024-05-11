@@ -1,0 +1,158 @@
+.Standings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0 0.5rem 0;
+  flex-wrap: wrap;
+}
+.Stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 5rem 0.5rem 5rem;
+}
+.TeamInfo {
+  padding: 1rem;
+}
+.loading {
+  color: white;
+}
+.table-container {
+  padding: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  background: #202124;
+}
+
+.table-container .league-table,
+.table-container .stats-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container .league-table th,
+.table-container .stats-table th {
+  padding: 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #bdc1c6;
+  background-color: #303134;
+}
+.table-container .league-table td,
+.table-container .stats-table td {
+  padding: 0.75rem;
+  text-align: left;
+  color: #bdc1c6;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+.table-container .stats-table td {
+  font-size: 1rem;
+}
+.player-team {
+  font-size: 0.75rem;
+}
+.table-container .stats-table th:nth-child(2),
+.table-container .stats-table td:nth-child(2) {
+  padding-right: 10rem;
+}
+.table-info {
+  background: #424548;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.table-info-title {
+  color: #bdc1c6;
+  font-size: 0.85rem;
+}
+.table-info-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #bdc1c6;
+  font-size: 0.85rem;
+}
+.tid {
+  display: flex;
+  gap: 1rem;
+}
+.tid-colour {
+  height: 0.85rem;
+  width: 0.85rem;
+}
+.TID1 {
+  background: #4285f4;
+}
+.TID2 {
+  background: #fa7b17;
+}
+.TID3 {
+  background: #ea4335;
+}
+.team-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.team-data {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  width: 80%;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid white;
+}
+.teaminfo-name {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+}
+.team-badge {
+  height: 3rem;
+  width: 3rem;
+}
+.player-position-title {
+  color: White;
+}
+.players-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 1rem 5rem 1rem 2rem;
+}
+.player-container {
+  flex-basis: calc(25% - 20px);
+  height: 23rem;
+  width: 15rem;
+  background: #202124;
+  text-align: center;
+  color: white;
+}
+.player-container img {
+  width: 100%;
+  min-height: 10rem;
+}
+@media (max-width: 770px) {
+  .Standings {
+    width: 100%;
+    overflow-y: auto;
+  }
+  .player-container {
+    min-height: 22rem;
+    min-width: 15rem;
+  }
+  .players-container {
+    overflow-y: auto;
+    flex-wrap: nowrap;
+  }
+}

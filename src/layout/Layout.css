@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+a {
+  text-decoration: none;
+  color: white;
+}
+.Navbar {
+  width: 100%;
+}
+.nav-container {
+  font-family: "Roboto Condensed", sans-serif;
+  background: black;
+  border-bottom: 0.5rem solid #fdb836;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+}
+.nav-logo {
+  width: 100%;
+  height: 4rem;
+  cursor: pointer;
+}
+.nav-menu {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-item {
+  list-style: none;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding-bottom: 0.25rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  border-radius: 0.25rem;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #feba36;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: center;
+  }
+  .logo {
+    display: none;
+  }
+}
