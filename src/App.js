@@ -6,7 +6,7 @@ import Stats from "./Components/Stats";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Net-Nest">
       <Routes>
         <Route path="/" element={<Events />} />
         <Route path="/standings" element={<Standings />} />

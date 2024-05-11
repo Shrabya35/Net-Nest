@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Layout.css";
 import LOGO from "../img/logo.png";
 
@@ -7,30 +8,30 @@ const Navbar = () => {
     <div className="Navbar">
       <div className="nav-container">
         <div className="logo">
-          <a href="/">
+          <Link to="/">
             <img src={LOGO} className="nav-logo" alt="logo" />
-          </a>
+          </Link>
         </div>
         <div className="nav-menu">
           <li>
-            <a href="/" className="nav-item">
+            <Link to="/" className="nav-item">
               Matches
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/standings" className="nav-item">
+            <Link to="/standings" className="nav-item">
               Standings
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/stats" className="nav-item">
+            <Link to="/stats" className="nav-item">
               Stats
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/" className="nav-item">
+            <Link to="/" className="nav-item">
               Players
-            </a>
+            </Link>
           </li>
         </div>
       </div>
