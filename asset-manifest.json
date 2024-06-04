@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Net-Nest/static/css/main.42b05801.css",
-    "main.js": "/Net-Nest/static/js/main.39b108b7.js",
+    "main.css": "/Net-Nest/static/css/main.0a1c3578.css",
+    "main.js": "/Net-Nest/static/js/main.149227de.js",
     "static/js/453.9ba39831.chunk.js": "/Net-Nest/static/js/453.9ba39831.chunk.js",
     "static/media/logo.png": "/Net-Nest/static/media/logo.9259ff6dcdae0c0d0758.png",
     "index.html": "/Net-Nest/index.html",
-    "main.42b05801.css.map": "/Net-Nest/static/css/main.42b05801.css.map",
-    "main.39b108b7.js.map": "/Net-Nest/static/js/main.39b108b7.js.map",
+    "main.0a1c3578.css.map": "/Net-Nest/static/css/main.0a1c3578.css.map",
+    "main.149227de.js.map": "/Net-Nest/static/js/main.149227de.js.map",
     "453.9ba39831.chunk.js.map": "/Net-Nest/static/js/453.9ba39831.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.42b05801.css",
-    "static/js/main.39b108b7.js"
+    "static/css/main.0a1c3578.css",
+    "static/js/main.149227de.js"
   ]
 }
