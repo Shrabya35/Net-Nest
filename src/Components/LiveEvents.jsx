@@ -3,16 +3,16 @@ import axios from "axios";
 import Layout from "../layout/Layout";
 import "./Component.css";
 
-const Events = () => {
-  const [scheduledEvents, setScheduledEvents] = useState([]);
+const LiveEvents = () => {
+  const [liveEvents, setLiveEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchScheduledEvents = async () => {
+    const fetchLiveEvents = async () => {
       const options = {
         method: "GET",
-        url: "https://sofascore.p.rapidapi.com/tournaments/get-scheduled-events",
+        url: "https://sofascore.p.rapidapi.com/tournaments/get-live-events",
         params: { categoryId: "1" },
         headers: {
           "X-RapidAPI-Key":
@@ -23,7 +23,7 @@ const Events = () => {
 
       try {
         const response = await axios.request(options);
-        setScheduledEvents(response.data.events);
+        setLiveEvents(response.data.events);
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -32,7 +32,8 @@ const Events = () => {
       }
     };
 
-    fetchScheduledEvents();
+    const interval = setInterval(fetchLiveEvents, 60000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -41,12 +42,16 @@ const Events = () => {
         <div className="events-container">
           {loading && <p className="loading">Loading...</p>}
           {error && <p className="loading">Error: {error}</p>}
-          {scheduledEvents.length === 0 && !loading && (
-            <p className="loading">No Scheduled Events currently</p>
+          {liveEvents.length === 0 && !loading && (
+            <p className="loading">No Live Matches currently</p>
           )}
           <div className="events-section">
-            {scheduledEvents
-              .filter((match) => match.tournament.slug === "premier-league")
+            {liveEvents
+              .filter(
+                (match) =>
+                  match.tournament.slug === "premier-league" &&
+                  match.country.slug === "england"
+              )
               .map((event) => (
                 <div className="event-card" key={event.id}>
                   <div className="event-card-top">
@@ -54,7 +59,11 @@ const Events = () => {
                       EPL R{event.roundInfo.round}
                     </div>
                     <div className="event-status">
-                      {event.status.description}
+                      <div className="event-time-text">
+                        {new Date(
+                          event.time.currentPeriodStartTimestamp * 1000
+                        ).toLocaleString()}
+                      </div>
                     </div>
                   </div>
                   <div className="event-card-bottom">
@@ -67,24 +76,11 @@ const Events = () => {
                       </div>
                     </div>
                     <div className="ec-bottom-right">
-                      <div className="event-time-date">
-                        {new Date(event.startTimestamp * 1000).toLocaleString(
-                          [],
-                          {
-                            year: "numeric",
-                            month: "numeric",
-                            day: "numeric",
-                          }
-                        )}
+                      <div className="event-time-text">
+                        {event.homeScore.current}
                       </div>
                       <div className="event-time">
-                        {new Date(
-                          event.startTimestamp * 1000
-                        ).toLocaleTimeString([], {
-                          hour: "numeric",
-                          minute: "2-digit",
-                          hour12: true,
-                        })}{" "}
+                        {event.awayScore.current}
                       </div>
                     </div>
                   </div>
@@ -97,4 +93,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default LiveEvents;
