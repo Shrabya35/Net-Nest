@@ -28,8 +28,6 @@ const Navbar = () => {
               Stats
             </Link>
           </li>
-<<<<<<< HEAD
-=======
           <li>
             <Link to="/livescore" className="nav-item">
               Live Score
